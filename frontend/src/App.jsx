@@ -7,7 +7,7 @@ import EventPage from './EventPage'
 function App() {
   return (
     <div>
-      <EventPage eventId={0}/>
+      <EventPage eventId={1}/>
     </div>
   )
 }

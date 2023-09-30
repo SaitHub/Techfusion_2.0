@@ -16,7 +16,7 @@ const eventsdata=[
             {
                 name: "Online Competetion",
                 date: "27 October",
-                time: "9:00-11:00 PM",
+                time: "9:00 PM -11:00 PM",
                 duration: "2.00 hrs",
                 participation: "Single Participation",
                 platform: "HackerRank"
@@ -59,21 +59,21 @@ const eventsdata=[
             {
                 name: "Aptitude Round",
                 date: "24 October",
-                time: "2:00-2:45 PM",
+                time: "2:00 PM - 2:45 PM",
                 duration: "45 min",
                 participation: "Double Participation"
             },
             {
                 name: "Classical Coding",
                 date: "24 October",
-                time: "3:00-4:00 PM",
+                time: "3:00 PM - 4:00 PM",
                 duration: "1 hour",
                 participation: "Double Participation"
             },
             {
                 name: "Reverse Coding",
                 date: "24 October",
-                time: "4:30-5:30 PM",
+                time: "4:30 PM - 5:30 PM",
                 duration: "1 hour",
                 participation: "Double Participation"
             }
@@ -103,13 +103,13 @@ const eventsdata=[
         timeline: [
             {   name: "Conceptual Lerning",
                 date: "29 October",
-                time: "9:30-12:30 PM",
+                time: "9:30 PM - 12:30 PM",
                 duration: "3 hrs",
                 participation: "Single Participation"
             },
             {   name: "Demo and Hands on",
                 date: "29 October",
-                time: "1:30-5:00 PM",
+                time: "1:30 PM - 5:00 PM",
                 duration: "3:30 hrs",
                 participation: "Single Participation"
             }
@@ -122,7 +122,7 @@ const eventsdata=[
         ]
     },
     {
-        eventName: "NetVerse",
+        eventName: "NetQuest",
         Contents: [
             "Introduction to Computer Networks",
             "OSI and TCP/IP Model",
@@ -137,13 +137,13 @@ const eventsdata=[
         timeline: [
             {   name: "Session 1",
                 date: "28 October",
-                time: "9:30-11:30 PM",
+                time: "9:30 PM - 11:30 PM",
                 duration: "2 hrs",
                 participation: "Single Participation"
             },
             {   name: "Session 2",
                 date: "28 October",
-                time: "12:30-2:30 PM",
+                time: "12:30 PM - 2:30 PM",
                 duration: "2 hrs",
                 participation: "Single Participation"
             }
