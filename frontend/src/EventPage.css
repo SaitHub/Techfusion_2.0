@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+*{
+    border: none;
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    background-color: #1A202C;
+    font-family: 'Roboto', sans-serif;
+}
+#mainContainer{
+    height: 100%;
+    width: 100%;
+    color: white;
+    margin-bottom: 40px;
+}
+#headingBar{
+    padding: 30px;
+    font-size: 2rem;
+    display: flex; 
+    align-items: center;
+}
+#heading{
+    width: 95%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4rem;
+    background: linear-gradient(0deg, #88c3ff, #004f9e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+#backarrow{
+    width: 5%;
+}
+#contentsContainer{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: 30px;
+    width:90%;
+    margin: auto;
+}
+.gridContainers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+#img1{
+    width: 400px;
+}
+#img2{
+    height: 400px;
+}
+.msgBox{
+    width: 80%;
+    height: fit-content;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #202631, #4e4f5099);
+    font-size: 1.25rem;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+#rulesContainer{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+}
+#rulesContainer li{
+    margin: 10px;
+}
+#rulesMsgBox{
+    width: 100%;
+    font-size: 1.2rem;
+}
+#rulesMsgBox h2{
+    font-size: 2rem;
+    margin-block: 20px;
+}
+#rulesMsgBox ul{
+    list-style: decimal;
+    margin-left: 30px;
+}
+#timerlineContainer{
+    display: flex;
+    flex-direction: column;
+}
+#timings{
+    width: fit-content;
+    box-sizing: border-box;
+}
+#timerlineContainer ul{
+    list-style: none;
+}
+#timings span{
+    margin-inline: 10px;
+}
+#timings p{
+    margin-block: 20px;
+}
+#contactMsgBox ul{
+    list-style: none;
+}
+#contactMsgBox{
+    width: fit-content;
+}
+#contactContainer{
+    display: flex;
+    flex-direction: column;
+}
+#contactMsgBox li{
+    font-size: 1.25rem;
+    margin-block: 30px;
+}
+#floating{
+    animation: floatAnimation 3s infinite ease-in-out;
+}
+@keyframes floatAnimation {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+}
+@media screen and (max-width: 800px) {
+    html{
+        width: 100vw;
+
+    }
+    body{
+        width: 100%;
+        font-size: medium;
+    }
+    #headingBar{
+        width: 100%;
+        padding-inline: 0%;
+    }
+    #heading{
+        width: 100%;
+    }
+    #mainContainer{
+        width: 100%;    
+    }
+    #contentsContainer{
+        font-size: medium;
+        width: 100%;
+        display: block;
+    }
+    .gridContainers{
+        margin: 10px;
+        width: 100%;
+        padding: 0%;
+        margin-left: 2%;
+    }
+    #rulesContainer{
+        width: 100%;
+    }
+    .msgBox{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0%;
+    }
+    #rulesMsgBox{
+        margin: 0%;
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    #img2{
+        display: none;
+    }
+    #img1{
+        width: 50%;
+    }
+    #timings{
+        padding: 10px;
+    }
+    #descriptionContainer{
+        width: 100%;
+        margin: auto;
+    }
+    #descriptionBox{
+        width: 100%;
+    }
+    span{
+        display: block;
+    }
+    div{
+        display: block;
+    }
+    #descriptionBox{
+        padding: 15px;
+    }
+    #contactContainer{
+        width: 100%;
+    }
+    #contactMsgBox{
+        width: 100%;
+        padding: 10px;
+    }
+}
