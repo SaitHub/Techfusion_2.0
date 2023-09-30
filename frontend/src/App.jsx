@@ -1,9 +1,13 @@
-import React from 'react'
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import EventPage from './EventPage'
 
-const App = () => {
+function App() {
   return (
-    <div style={{width:"100vw",height:"100vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
-      <h1>TechFusion 2.0</h1>
+    <div>
+      <EventPage eventId={0}/>
     </div>
   )
 }
