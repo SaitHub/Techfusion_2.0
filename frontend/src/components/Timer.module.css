@@ -1,0 +1,39 @@
+.timerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    color: #7ca6d6;
+    border-radius: 50px;
+    padding: 0.7rem 2rem;
+  }
+  .timerContainer:hover{
+    background-color: rgba(147, 197, 246, 1);
+  }
+  .timerItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+  }
+  
+  .timerValue {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .timerLabel {
+    font-size: 1rem;
+  }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .timerValue{
+    font-size: 2rem;
+  }
+  .timerContainer{
+    padding: 0.7rem 1rem;
+  }
+}
+  

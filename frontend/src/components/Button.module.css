@@ -1,0 +1,12 @@
+.btn{
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 1.23rem;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+.btn:hover{
+    cursor: pointer;
+    filter: brightness(0.9);
+}

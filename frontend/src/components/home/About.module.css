@@ -1,0 +1,38 @@
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: fit-content;
+    padding: 0.23rem 2rem;
+}
+.aboutContainer h2{
+    font-size: 3rem;
+    font-family: 'Gabarito', sans-serif;
+    background: linear-gradient(45deg, #6992bb, #004f9e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.aboutSection{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: fit-content;
+    gap: 2rem;
+}
+.aboutSection p{
+    font-size: 1.128rem;
+    font-family: 'ubuntu', sans-serif;
+    color: #acb1b6;
+    margin-top: 1rem;
+}
+.aboutSection img{
+    height: 350px;
+    width: 350px;
+}
+@media (max-width: 768px) {
+ .aboutContainer{
+    display: none;
+ }
+  }

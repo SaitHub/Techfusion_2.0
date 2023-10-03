@@ -1,0 +1,9 @@
+.ip{
+    border-radius: 16px;
+    background: linear-gradient(90deg, #162532 0%, #1B2833 45.44%, #252D35 89.03%);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25),inset -2px -2px 4px rgba(224, 221, 221, 0.485);
+    padding: 1.2rem;
+    color: white;
+    font-size: 1.15rem;
+    outline: none;
+}
