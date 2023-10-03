@@ -1,0 +1,99 @@
+.contactContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 1.5rem;
+}
+.contactContainer h1{
+    font-size: 3rem;
+    font-family: 'Gabarito', sans-serif;
+    background: linear-gradient(45deg, #6992bb, #004f9e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.contactSection{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    width: 100vw;
+    height: fit-content;
+}
+
+form textarea{
+    border-radius: 16px;
+    background: linear-gradient(90deg, #162532 0%, #1B2833 45.44%, #252D35 89.03%);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25),inset -2px -2px 4px rgba(224, 221, 221, 0.485);
+    padding: 1.2rem;
+    color: white;
+    font-size: 1.15rem;
+    outline: none;
+    width: 100%;
+}
+.contactSection form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+    height: 100%;
+    width: 50%;
+}
+.contactSection form button:hover{
+    filter: brightness(0.9);
+}
+.contactSection img{
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .contactContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem; /* Reduced gap for smaller screens */
+        margin-top: 1rem; /* Adjusted margin for spacing on smaller screens */
+    }
+    
+    .contactContainer h1 {
+        font-size: 2.5rem; /* Reduced font size for smaller screens */
+    }
+    
+    .contactSection {
+        display: flex;
+        flex-direction: column; /* Stack items vertically for mobile */
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        padding: 1rem; /* Added padding for spacing on smaller screens */
+    }
+    
+    form textarea {
+        border-radius: 16px;
+        padding: 1rem;
+        color: white;
+        font-size: 1rem; /* Reduced font size for smaller screens */
+        width: 100%; /* Full width for mobile */
+    }
+    
+    .contactSection form {
+        width: 100%; /* Full width for mobile */
+        max-width: 400px; /* Limit form width on larger screens */
+    }
+    
+    .contactSection form button:hover {
+        filter: brightness(0.9);
+    }
+    
+    .contactSection img {
+        display: none;
+    }
+    
+  }

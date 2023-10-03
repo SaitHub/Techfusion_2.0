@@ -125,25 +125,18 @@ body{
       transform: translateY(-15px);
     }
 }
-@media screen and (max-width: 800px) {
-    html{
-        width: 100vw;
-
-    }
-    body{
-        width: 100%;
-        font-size: medium;
-    }
-    #headingBar{
+@media screen and (max-width: 768px) {
+    /* #headingBar{
         width: 100%;
         padding-inline: 0%;
-    }
+    } */
     #heading{
         width: 100%;
+        font-size: 2.5rem;
     }
-    #mainContainer{
+    /* #mainContainer{
         width: 100%;    
-    }
+    } */
     #contentsContainer{
         font-size: medium;
         width: 100%;
@@ -165,7 +158,7 @@ body{
     }
     #rulesMsgBox{
         margin: 0%;
-        width: 100%;
+        width:90%;
         margin: auto;
         padding: 10px;
         box-sizing: border-box;
@@ -197,9 +190,11 @@ body{
     }
     #contactContainer{
         width: 100%;
+        display: flex;
+        align-items: center;
     }
     #contactMsgBox{
-        width: 100%;
+        width: 90%;
         padding: 10px;
     }
 }

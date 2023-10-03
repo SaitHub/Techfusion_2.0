@@ -2,20 +2,21 @@ import React from 'react';
 import "./EventPage.css";
 import eventsdata from './eventdata';
 import {BiLeftArrowAlt} from "react-icons/bi"
-import image1 from "./assets/image 1.svg"
-import image2 from "./assets/image 2.svg"
-import image3 from "./assets/image 3.svg"
-import image4 from "./assets/image 4.svg"
-import image5 from "./assets/image 5.svg"
-import image6 from "./assets/image 6.svg"
-import image7 from "./assets/image 7.svg"
-import image8 from "./assets/image 8.svg"
-import image9 from "./assets/image 9.svg"
-import image10 from "./assets/image 10.svg"
+import image1 from "../assets/image 1.svg"
+import image2 from "../assets/image 2.svg"
+import image3 from "../assets/image 3.svg"
+import image4 from "../assets/image 4.svg"
+import image5 from "../assets/image 5.svg"
+import image6 from "../assets/image 6.svg"
+import image7 from "../assets/image 7.svg"
+import image8 from "../assets/image 8.svg"
+import image9 from "../assets/image 9.svg"
+import image10 from "../assets/image 10.svg"
 import {PiPhoneDisconnectBold} from "react-icons/pi"
-
+import { useParams,useNavigate } from 'react-router-dom';
 const EventPage=(props)=>{
-    const id=props.eventId;
+    const id=useParams().id;
+    const navigate=useNavigate();
     const eventInfo=eventsdata[id]
     const imageArray=[image1,image2,image3,image4,image5,image6,image7,image8,image9,image10]
     const compeleteRules=eventInfo.rules;
@@ -27,7 +28,7 @@ const EventPage=(props)=>{
         <div id='mainContainer'>
             <div id='headingBar'>
                 <div id="backArrow">
-                    <BiLeftArrowAlt/>
+                    <BiLeftArrowAlt style={{cursor:"pointer"}} onClick={()=>{navigate('/')}}/>
                 </div>
                 <div id='heading'>
                     {eventInfo.eventName}
