@@ -9,7 +9,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
-import rule from '../../assets/TechFusion_2.0_Rulebook.pdf'
+import rule from '../../assets/Rulebook.pdf'
 import sait from "../../assets/sait.png";
 import classes from "./Foot.module.css";
 const Foot = () => {
