@@ -1,14 +1,14 @@
-const eventsdata=[
-    {   
+const eventsdata = [
+    {
         eventName: "CodeCrush",
         rules: [
             [
-            "CodeCrush is a programming competition that offers two distinct tracks: Novice and Expert.",
-            "The Novice track is exclusively reserved for first-year degree, first-year diploma, second-year diploma students, while the Expert track is open to students in their second, third, and final years degree and third-year diploma.",
-            "This event is entirely online, taking place on the renowned HackerRank platform, a leading resource for coding assessments and skill evaluations.",
-            "Participants will have two hours to complete the contest, which will challenge their programming abilities and technical knowledge.",
-            "The top four performers will receive prizes, with a special recognition awarded to the top female participant.",
-            "Participation in the WCE Campus is not mandatory, as this event is fully remote and accessible from any location."
+                "CodeCrush is a programming competition that offers two distinct tracks: Novice and Expert.",
+                "The Novice track is exclusively reserved for first-year degree, first-year diploma, second-year diploma students, while the Expert track is open to students in their second, third, and final years degree and third-year diploma.",
+                "This event is entirely online, taking place on the renowned HackerRank platform, a leading resource for coding assessments and skill evaluations.",
+                "Participants will have two hours to complete the contest, which will challenge their programming abilities and technical knowledge.",
+                "The top four performers will receive prizes, with a special recognition awarded to the top female participant.",
+                "Participation in the WCE Campus is not mandatory, as this event is fully remote and accessible from any location."
             ]
         ],
         description: "This event will be 2 hour long online coding contest.",
@@ -81,12 +81,12 @@ const eventsdata=[
         paticipation: "Team of 2",
         entryfee: 150,
         venue: "Main CCF, IT Department",
-        contact:[
+        contact: [
             "Vishwas Nalawade 9309320694",
             "Aditya Tolgekar 7030702652"
         ]
     },
-    {   
+    {
         eventName: "CloudVerse",
         Contents: [
             "Basics of Cloud Computing & why it is needed",
@@ -99,15 +99,17 @@ const eventsdata=[
             "Demo and Hands-on, along with quiz at the end"
         ],
         description: "An intensive 1-day workshop on cloud computing and AWS hands-on included.",
-        rules:[],
+        rules: [],
         timeline: [
-            {   name: "Conceptual Lerning",
+            {
+                name: "Conceptual Lerning",
                 date: "29 October",
                 time: "9:30 PM - 12:30 PM",
                 duration: "3 hrs",
                 participation: "Single Participation"
             },
-            {   name: "Demo and Hands on",
+            {
+                name: "Demo and Hands on",
                 date: "29 October",
                 time: "1:30 PM - 5:00 PM",
                 duration: "3:30 hrs",
@@ -122,7 +124,7 @@ const eventsdata=[
         ]
     },
     {
-        eventName: "NetQuest",
+        eventName: "Netverse",
         Contents: [
             "Introduction to Computer Networks",
             "OSI and TCP/IP Model",
@@ -131,17 +133,19 @@ const eventsdata=[
             "Applications of Computer Networks",
             "Hands on"
         ],
-        rules:[]
+        rules: []
         ,
         description: "A Comprehensive Computer Network Workshop with Practical Hands-On Sessions.",
         timeline: [
-            {   name: "Session 1",
+            {
+                name: "Session 1",
                 date: "28 October",
                 time: "9:30 PM - 11:30 PM",
                 duration: "2 hrs",
                 participation: "Single Participation"
             },
-            {   name: "Session 2",
+            {
+                name: "Session 2",
                 date: "28 October",
                 time: "12:30 PM - 2:30 PM",
                 duration: "2 hrs",

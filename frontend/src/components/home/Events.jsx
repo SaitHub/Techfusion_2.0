@@ -32,13 +32,13 @@ const Events = () => {
         {
             id:3,
             image:netq,
-            title:"NetQuest",
+            title:"Netverse",
             content:"Netverse, a day-long event exploring computer networks. Learn the basics, understand IP addresses, and explore real-world applications. Get hands-on experience and practical skills. It's a fun and easy way to dive into the world of networks!",
         },
         {
             id:4,
             image:b2b,
-            title:"Bid to Build",
+            title:"Bid 2 Build",
             content:"Bid 2 Build is an IPL-style auction event where cricket skills and attentiveness are judged as participants bid for players to build their team. It requires strategic decision-making and cricket knowledge to build a winning team, making it an exciting opportunity to showcase skills and test decision making abilities.",
         }
     ]

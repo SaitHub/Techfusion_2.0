@@ -9,6 +9,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
+import rule from '../../assets/TechFusion_2.0_Rulebook.pdf'
 import sait from "../../assets/sait.png";
 import classes from "./Foot.module.css";
 const Foot = () => {
@@ -23,12 +24,11 @@ const Foot = () => {
             <p>Walchand college of engineering, Sangli</p>
           </div>
           <div className={classes.spanlogo}>
-              <a
-                href="../../assets/Techfusion_2.0_Rulebook.pdf"
-                target="_blank"
+              <NavLink
+                to={{pathname:rule}} target="_blank"
               >
                 <VscLaw size={25} color="black" />
-              </a>
+              </NavLink>
             <p>Techfusion 2.0 Rulebook</p>
           </div>
           <div className={classes.spanlogo}>
