@@ -245,10 +245,10 @@ const Register = () => {
                     <input type="checkbox" name="codecrush"/> CodeCrush (₹60)
                     </label>
                     <label>
-                    <input type="checkbox" name="netverse"/> Netverse (₹150)
+                    <input type="checkbox" name="netverse"/> NetVerse (₹150)
                     </label>
                     <label>
-                    <input type="checkbox" name="cloudeverse"/> Cloudverse (₹150)
+                    <input type="checkbox" name="cloudeverse"/> CloudVerse (₹150)
                     </label>
                     <label>
                     <input type="checkbox" name="Bid 2 Build"/> Bid 2 Build (₹200/team)

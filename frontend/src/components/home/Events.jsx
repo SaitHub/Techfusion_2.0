@@ -26,14 +26,14 @@ const Events = () => {
         {
             id:2,
             image:cloudv,
-            title:"Cloudverse",
-            content:"Cloudverse is a one-day event covering AWS services to provide a comprehensive understanding of cloud computing basics and elements. Participants gain valuable insights and practical skills for real-world scenarios, making it an engaging and informative learning experience.",
+            title:"CloudVerse",
+            content:"CloudVerse is a one-day event covering AWS services to provide a comprehensive understanding of cloud computing basics and elements. Participants gain valuable insights and practical skills for real-world scenarios, making it an engaging and informative learning experience.",
         },
         {
             id:3,
             image:netq,
-            title:"Netverse",
-            content:"Netverse, a day-long event exploring computer networks. Learn the basics, understand IP addresses, and explore real-world applications. Get hands-on experience and practical skills. It's a fun and easy way to dive into the world of networks!",
+            title:"NetVerse",
+            content:"NetVerse, a day-long event exploring computer networks. Learn the basics, understand IP addresses, and explore real-world applications. Get hands-on experience and practical skills. It's a fun and easy way to dive into the world of networks!",
         },
         {
             id:4,

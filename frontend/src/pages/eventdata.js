@@ -124,7 +124,7 @@ const eventsdata = [
         ]
     },
     {
-        eventName: "Netverse",
+        eventName: "NetVerse",
         Contents: [
             "Introduction to Computer Networks",
             "OSI and TCP/IP Model",
