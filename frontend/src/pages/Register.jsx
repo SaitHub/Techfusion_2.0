@@ -5,8 +5,12 @@ import { BiLeftArrowAlt } from "react-icons/bi";
 import regImage from "../assets/regImage.png";
 import qr from "../assets/qr.png";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import Input from "../components/Input";
+import { useRef } from "react";
+import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
+
 const Register = () => {
     const navigate = useNavigate();
   const [email, setEmail] = useState({
@@ -29,13 +33,14 @@ const Register = () => {
     validateClgname: false,
     clgnametouch: false,
     });
+    const [year, setYear] = useState("First Year");
   const [event, setEvent] = useState({
     event: [],
     validateEvent: false,
     eventtouch: false,
   });
   const [screenshot, setScreenshot] = useState({
-    screenshot: undefined,
+    screenshot: null,
     validateScreenshot: false,
     screenshottouch: false,
   });
@@ -45,7 +50,14 @@ const Register = () => {
     tidtouch: false,
   });
   const [isFormValid, setIsFormValid] = useState(false);
-  // const submit=useSubmit()
+
+  const codeDuetRef = useRef(null);
+  const codeCrushRef = useRef(null);
+  const netVerseRef = useRef(null);
+  const cloudVerseRef = useRef(null);
+  const bidToBuildRef = useRef(null);
+  const fileRef=useRef(null)
+
   const handleEmailChange = (e) => {
     setEmail({
       email: e.target.value,
@@ -79,12 +91,13 @@ const Register = () => {
     });
   };
     const handleEventChange = (e) => {
-    setEvent({
-      event: [...event.event,e.target.value],
-      validateEvent: event.event.length > 0,
-      eventtouch: true,
-    });
-    };
+      const eventName = e.target.name;
+      if (e.target.checked) {
+        setEvent({event:[...event.event, eventName], validateEvent: true, eventtouch: true});
+      } else {
+        setEvent({event:event.event.filter((event) => event !== eventName), validateEvent: false, eventtouch: false});
+      }
+  }
   const handleNameBlur = (e) => {
     setName({
       name: name.name.trim(),
@@ -117,23 +130,92 @@ const Register = () => {
       emailtouch: true,
     });
   };
+  const handleEventBlur = (e) => {
+    setEvent({
+      event: event.event,
+      validateEvent: event.event.length > 0,
+      eventtouch: true,
+    });
+  };
+
   useEffect(() => {
     setIsFormValid(
       email.validateEmail &&
         name.validateName &&
         phno.validatePhno &&
-        clgname.validateClgname
+        clgname.validateClgname&&event.validateEvent&&screenshot.validateScreenshot&&tid.validateTid
     );
-  }, [email.email, name.name, phno.phno, clgname.clgname]);
-  const handleSubmit = (e) => {
+  }, [email.email, name.name, phno.phno, clgname.clgname, event.event,screenshot.screenshot,tid.tid]);
+ 
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email.email, " ", name.name, " ");
+    // console.log(email.email, " ", name.name, " ", phno.phno, " ", clgname.clgname, " ",year," ", event.event," ",screenshot.screenshot," ",tid.tid);
     setEmail({ email: "", validateEmail: false, emailtouch: false });
     setName({ name: "", validateName: false, nametouch: false });
     setPhno({ phno: "", validatePhno: false, phnotouch: false });
     setClgname({ clgname: "", validateClgname: false, clgnametouch: false });
-  };
+    setYear("First Year");
+    setEvent({ event: [], validateEvent: false, eventtouch: false });
+    setScreenshot({ screenshot: null, validateScreenshot: false, screenshottouch: false });
+    setTid({ tid: "", validateTid: false, tidtouch: false });
 
+    codeDuetRef.current.checked = false;
+    codeCrushRef.current.checked = false;
+    netVerseRef.current.checked = false;
+    cloudVerseRef.current.checked = false;
+    bidToBuildRef.current.checked = false;
+    const userRegistrationData=new FormData();
+    userRegistrationData.append("Name",name.name);
+    userRegistrationData.append("Email",email.email);
+    userRegistrationData.append("Phone_No",phno.phno);
+    userRegistrationData.append("College_Name",clgname.clgname);
+    userRegistrationData.append("Year_of_Study",year);
+    userRegistrationData.append("Events",event.event);
+    userRegistrationData.append("Transaction_id",tid.tid);
+    const paymentScreenshot = new FormData();
+    paymentScreenshot.append("file", screenshot.screenshot);
+    paymentScreenshot.append("upload_preset", "techfusion_payment"); // Specify your upload preset name here
+    paymentScreenshot.append("cloud_name", "du3cgjere");
+
+    try {
+        const response = await axios.post(
+            "https://api.cloudinary.com/v1_1/du3cgjere/auto/upload", // Use "auto" as the upload type for automatic format selection
+            paymentScreenshot,
+            {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            }
+        );
+
+        userRegistrationData.append("Payment_Screenshot",response.data.url);
+
+    } catch (error) {
+        toast.error("Error occurred while uploading the payment screenshot");
+    }
+    // console.log(userRegistrationData.forEach((value,key)=>{console.log(key,value)}));
+    try{
+      const data=await axios.post("http://localhost:5000/user/register",userRegistrationData,{
+        withCredentials:true,
+        headers:{
+          "Content-Type":"application/json"
+        }
+      });
+      if(data.status === 201){
+        toast.success("Successfully Registered!");
+      }
+      if(!data.status===200){
+        throw new Error("Error in registering user");
+      }
+
+    }
+    catch(err){
+      toast.error(err.response.data.msg);
+      // console.log(err)
+    }
+    fileRef.current.value=null
+  };
+  
   return (
     <>
       <div id="backArrow">
@@ -152,7 +234,7 @@ const Register = () => {
           <div className={classes.formContainer}>
             <form onSubmit={handleSubmit}>
               <div className={classes.ip}>
-                <label for="year">Name:</label>
+                <label htmlFor="name">Name:</label>
                 <Input
                   properties={{
                     type: "text",
@@ -169,7 +251,7 @@ const Register = () => {
                 )}
               </div>
               <div className={classes.ip}>
-                <label for="year">Email:</label>
+                <label htmlFor="email">Email:</label>
                 <Input
                   properties={{
                     type: "email",
@@ -186,8 +268,8 @@ const Register = () => {
                 )}
               </div>
               <div className={classes.ip}>
-                <label for="year">
-                  Phone No. (don't include country code):
+                <label htmlFor="phone">
+                  WhatsApp No. (don't include country code):
                 </label>
                 <Input
                   properties={{
@@ -207,7 +289,7 @@ const Register = () => {
                 )}
               </div>
               <div className={classes.ip}>
-                <label for="year">College Name:</label>
+                <label htmlFor="clgName">College Name:</label>
                 <Input
                   properties={{
                     type: "text",
@@ -224,84 +306,91 @@ const Register = () => {
                 )}
               </div>
               <div className={classes.ip}>
-                <label for="year">Year of Study:</label>
+                <label htmlFor="year">Year of Study:</label>
                 <select
                   id="year"
                   placeholder="year of study"
+                  value={year}
+                  onChange={(e) => {
+                    setYear(e.target.value);
+                  }}
                 >
-                  <option value="first">First Year</option>
-                  <option value="second">Second Year</option>
-                  <option value="third">Third Year</option>
-                  <option value="fourth">Fourth Year</option>
+                  <option value="First Year">First Year</option>
+                  <option value="Second Year">Second Year</option>
+                  <option value="Third Year">Third Year</option>
+                  <option value="Fourth Year">Fourth Year</option>
                 </select>
               </div>
               <div className={classes.ip}>
-                <label for="events">Select Events:</label>
-                <div class={classes.checkgroup}>
+                <label htmlFor="events">Select Events:</label>
+                <div className={classes.checkgroup}>
                     <label>
-                    <input type="checkbox" name="codeduet"/> CodeDuet (₹150/team)
+                    <input type="checkbox" name="CodeDuet" ref={codeDuetRef} onChange={(e)=>{handleEventChange(e)}} onBlur={(e)=>{handleEventBlur(e)}}/> CodeDuet (₹150/team)
                     </label>
                     <label>
-                    <input type="checkbox" name="codecrush"/> CodeCrush (₹60)
+                    <input type="checkbox" name="CodeCrush" ref={codeCrushRef} onChange={(e)=>{handleEventChange(e)}} onBlur={(e)=>{handleEventBlur(e)}}/> CodeCrush (₹60)
                     </label>
                     <label>
-                    <input type="checkbox" name="netverse"/> NetVerse (₹150)
+                    <input type="checkbox" name="NetVerse" ref={netVerseRef} onChange={(e)=>{handleEventChange(e)}} onBlur={(e)=>{handleEventBlur(e)}}/> NetVerse (₹150)
                     </label>
                     <label>
-                    <input type="checkbox" name="cloudeverse"/> CloudVerse (₹150)
+                    <input type="checkbox" name="CloudVerse" ref={cloudVerseRef} onChange={(e)=>{handleEventChange(e)}} onBlur={(e)=>{handleEventBlur(e)}}/> CloudVerse (₹150)
                     </label>
                     <label>
-                    <input type="checkbox" name="Bid 2 Build"/> Bid 2 Build (₹200/team)
+                    <input type="checkbox" name="Bid 2 Build" ref={bidToBuildRef} onChange={(e)=>{handleEventChange(e)}} onBlur={(e)=>{handleEventBlur(e)}}/> Bid 2 Build (₹200/team)
                     </label>
                 </div>
-                {!clgname.validateClgname && clgname.clgnametouch && (
+                {!event.validateEvent && event.eventtouch && (
                   <h5 style={{ color: "red" }}>* Select at least one event</h5>
                 )}
               </div>
                 <div className={classes.ip}>
-                <label for="year">Payment Screenshot:</label>
+                <label htmlFor="payment">Payment Screenshot:</label>
                 <Input
                   properties={{
                     type: "file",
                     name: "payment",
-                    value: clgname.clgname,
+                    ref:fileRef,
                     placeholder: "Payment Screenshot",
                     style: { width: "100%" },
-                    onChange: handleClgnameChange,
-                    onBlur: handleClgnameBlur,
+                    onChange: (e)=>{setScreenshot({screenshot:e.target.files[0],validateScreenshot:e.target.files[0] !== null,screenshottouch:true})},
+                    onBlur: (e)=>{setScreenshot({screenshot:screenshot.screenshot,validateScreenshot:screenshot.screenshot !== null,screenshottouch:true})},
                   }}
                 />
-                {!clgname.validateClgname && clgname.clgnametouch && (
+                {!screenshot.validateScreenshot&&screenshot.screenshottouch && (
                   <h5 style={{ color: "red" }}>* Screenshot is Mandatory</h5>
                 )}
               </div>
               <div className={classes.ip}>
-                <label for="year">Transaction Id:</label>
+                <label htmlFor="tid">Transaction Id:</label>
                 <Input
                   properties={{
                     type: "text",
-                    name: "clgName",
-                    value: clgname.clgname,
+                    name: "tid",
+                    value: tid.tid,
                     placeholder: "ex- T1234-5678-9012-3456",
                     style: { width: "100%" },
-                    onChange: handleClgnameChange,
-                    onBlur: handleClgnameBlur,
+                    onChange: (e)=>{setTid({tid:e.target.value,validateTid:e.target.value.trim().length > 0,tidtouch:true})},
+                    onBlur: (e)=>{setTid({tid:tid.tid.trim(),validateTid:tid.tid.trim().length > 0,tidtouch:true})},
                   }}
                 />
-                {!clgname.validateClgname && clgname.clgnametouch && (
+                {!tid.validateTid && tid.tidtouch && (
                   <h5 style={{ color: "red" }}>* Transaction id is Mandatory</h5>
                 )}
               </div>
-              <button
+              <Toaster/>
+              <button 
+                disabled={!isFormValid}
                 style={{
                   color: "white",
-                  backgroundColor: "#2B6CB0",
+                  backgroundColor: (isFormValid)?"#2B6CB0":"#4a5663",
                   width: "160px",
                   height: "40px",
                   borderRadius: "15px",
                   cursor: isFormValid ? "pointer" : "not-allowed",
                   outline: "none",
                   fontSize: "1.2rem",
+                  marginTop: "20px",
                 }}
               >
                 Submit
@@ -312,6 +401,7 @@ const Register = () => {
               <div className={classes.qrSection}>
                 <img src={qr} alt="#" />
                 <h3>Scan QR code to register</h3>
+                <h4 style={{color:"white",marginTop:"1.2rem",fontSize:"1.123rem"}}>*Note: If you are participating in both events NetVerse and CloudVerse, you only need to pay a combined fee of ₹250.</h4>
               </div>
             </div>
           </div>
@@ -322,3 +412,4 @@ const Register = () => {
 };
 
 export default Register;
+

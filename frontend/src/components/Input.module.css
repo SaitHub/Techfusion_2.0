@@ -7,3 +7,13 @@
     font-size: 1.15rem;
     outline: none;
 }
+.fip::-webkit-file-upload-button{
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: medium;
+    cursor: pointer;
+    background-color: #305e6f;
+    color: white;
+}

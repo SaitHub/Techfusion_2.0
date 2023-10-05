@@ -4,7 +4,8 @@ import Button from "../Button";
 import contactlogo from "../../assets/contactlogo.png";
 import styles from "../Floating.module.css";
 import classes from "./Contact.module.css";
-import { useSubmit } from "react-router-dom";
+import toast,{Toaster} from 'react-hot-toast';
+import axios from "axios";
 const Contact = () => {
   const [email, setEmail] = useState({ email: "", validateEmail: false,emailtouch:false});
   const [name, setName] = useState({ name: "", validateName: false,nametouch:false});
@@ -14,7 +15,6 @@ const Contact = () => {
     suggestionstouch:false
   });
   const [isFormValid, setIsFormValid] = useState(false);
-  // const submit=useSubmit()
   const handleEmailChange = (e) => {
     setEmail({
       email: e.target.value,
@@ -65,9 +65,29 @@ const Contact = () => {
         suggestions.validateSuggestions
     );
   }, [email.email, name.name, suggestions.suggestions]);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email.email, " ", name.name, " ", suggestions.suggestions);
+    const contact=new FormData();
+    contact.append('name',name.name)
+    contact.append('email',email.email)
+    contact.append('suggestions',suggestions.suggestions)
+    try{
+    const data=await axios.post('http://localhost:5000/user/contact',contact,{
+      withCredentials:true,
+      headers:{
+        'Content-Type':'application/json'
+      }
+    });
+      if(data.status===201){
+        toast.success('Your response has been recorded');
+      }
+      if(data.status===400){
+        throw new Error(data.message);
+      }
+  }
+    catch(err){
+      toast.error("Something went wrong");
+    }
     setEmail({ email: "", validateEmail: false,emailtouch:false });
     setName({ name: "", validateName: false,nametouch:false });
     setSuggestions({ suggestions: "", validateSuggestions: false,suggestionstouch:false });
@@ -117,16 +137,19 @@ const Contact = () => {
           {!suggestions.validateSuggestions&&suggestions.suggestionstouch && (
             <h5 style={{ color: "red" }}>* Suggestions are Mandatory</h5>
           )}
+          <Toaster/>
           <button
+            disabled={!isFormValid}
             style={{
               color: "white",
-              backgroundColor: "#2B6CB0",
+              backgroundColor: (isFormValid)?"#2B6CB0":"#4a5663",
               width: "160px",
               height: "40px",
               borderRadius: "15px",
               cursor: isFormValid ? "pointer" : "not-allowed",
               outline: "none",
               fontSize: "1.2rem",
+            
             }}
           >
             Submit
@@ -139,28 +162,4 @@ const Contact = () => {
 };
 
 export default Contact;
-// export const registerAction=async ({request,params})=>{
-//   const data=await request.formData()
-//   const obj={
-//       name:data.get('name'),
-//       email:data.get('email'),
-//       password:data.get('password')
-//   }
-//   try{
-//   console.log("Inside action ",obj)
-//   const res=await axios.post('http://localhost:5000/user/register',obj,{
-//       withCredentials:true
-//   });
-//   console.log(res.data);
-//   if(!res===200){
-//      throw new Error('Registration failed')
-//   }
-//   else{
-//       toast.success('Successfully Registered !!!')
-//   }
-// }
-// catch(err){
-//   toast.error(err.response.data.message)
-//   return json({status:502, message:"Registration failed"})
-// }
-// }
+
