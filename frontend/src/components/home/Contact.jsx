@@ -72,7 +72,7 @@ const Contact = () => {
     contact.append('email',email.email)
     contact.append('suggestions',suggestions.suggestions)
     try{
-    const data=await axios.post('http://localhost:5000/user/contact',contact,{
+    const data=await axios.post('https://techfusion2-0.onrender.com/user/contact',contact,{
       withCredentials:true,
       headers:{
         'Content-Type':'application/json'
