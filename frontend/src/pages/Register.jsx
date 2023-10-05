@@ -195,7 +195,7 @@ const Register = () => {
     }
     // console.log(userRegistrationData.forEach((value,key)=>{console.log(key,value)}));
     try{
-      const data=await axios.post("http://localhost:5000/user/register",userRegistrationData,{
+      const data=await axios.post("https://techfusion2-0.onrender.com/user/register",userRegistrationData,{
         withCredentials:true,
         headers:{
           "Content-Type":"application/json"
