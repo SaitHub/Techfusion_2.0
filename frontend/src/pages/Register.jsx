@@ -3,7 +3,7 @@ import classes from "./Register.module.css";
 import Card from "../components/Card";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import regImage from "../assets/regImage.png";
-import qr from "../assets/qr.png";
+import qr from "../assets/qr.jpeg";
 import { useState, useEffect } from "react";
 import { useNavigate} from "react-router-dom";
 import Input from "../components/Input";
@@ -400,8 +400,8 @@ const Register = () => {
               <img src={regImage} alt="#" />
               <div className={classes.qrSection}>
                 <img src={qr} alt="#" />
-                <h3>Scan QR code to register</h3>
-                <h4 style={{color:"white",marginTop:"1.2rem",fontSize:"1.123rem"}}>*Note: If you are participating in both events NetVerse and CloudVerse, you only need to pay a combined fee of ₹250.</h4>
+                <h3>Scan QR code for Payment</h3>
+                <h4 style={{color:"white",marginTop:"1.2rem",fontSize:"1.123rem"}}>*Note: If you are participating in both events NetVerse and CloudVerse, you only need to pay a combined fee of ₹200.</h4>
               </div>
             </div>
           </div>
