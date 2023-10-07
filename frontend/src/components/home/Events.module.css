@@ -1,3 +1,13 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: 100vw;
+    gap: 2rem;
+    padding:  0 2rem;
+}
 .eventContainer{
     display: flex;
     flex-direction: column;
@@ -75,7 +85,47 @@
     left: 100px;
     bottom: -10px;
 }
-
+.sponser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: 100vw;
+    gap: 2rem;
+    padding:  0 2rem;
+}
+.sponser h1{
+    font-size: 3rem;
+    font-family: 'Gabarito', sans-serif;
+    background: linear-gradient(45deg, #6992bb, #004f9e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.sponserSection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.sponserCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    gap: 1rem;
+    color: white;
+}
+.sponserCard img{
+   width: 30%;
+    height: 30%;
+    object-fit: contain;
+    border-radius: 50%;
+}
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
 /* .eventContainer styles remain the same */
@@ -116,5 +166,8 @@
     position: static; /* Reset position for mobile */
     margin-top: 1rem; /* Added margin for spacing on smaller screens */
 }
-
+.sponser h1{
+    font-size: 2.5rem; /* Reduced font size for smaller screens */
+    margin-bottom: 1rem;
+}
   }

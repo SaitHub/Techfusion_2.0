@@ -3,6 +3,7 @@ import classes from './Hero.module.css'
 import Navbar from './Navbar'
 import Timer from '../Timer'
 import Button from '../Button'
+import prizes from '../../assets/prize.png'
 import {useNavigate} from 'react-router-dom'
 const Hero = () => {
   const navigate=useNavigate()
@@ -16,6 +17,7 @@ const Hero = () => {
                 <div className={classes.time}>
                 <Timer/>
                 </div>
+                <img className={classes.prize} src={prizes} alt="#" />
                 <div className={classes.registerButton}>
                 <Button text="Register Now" color="black" bgcolor="#65CACC" width="160px" height="50px" clickListener={()=>{navigate('/register')}}/>
                 </div>

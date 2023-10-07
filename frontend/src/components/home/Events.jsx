@@ -7,6 +7,7 @@ import cloudv from '../../assets/cloudv.jpg'
 import netq from '../../assets/netq.png'
 import Card from '../Card'
 import Button from '../Button'
+import sponser from '../../assets/ninja.png'
 import { useNavigate } from 'react-router-dom'
 const Events = () => {
     const navigate=useNavigate()
@@ -43,6 +44,7 @@ const Events = () => {
         }
     ]
   return (
+    <div className={classes.main}>
     <div className={classes.eventContainer}>
         <h1>Events</h1>
         <div className={classes.eventSection}>
@@ -59,6 +61,17 @@ const Events = () => {
                 </Card>
             ))}
         </div>
+    </div>
+    <div className={classes.sponser}>
+        <h1>Sponsors</h1>
+        <div className={classes.sponserSection}>
+            <div className={classes.sponserCard}>
+                <img src={sponser} alt="The Sparks Foundation" className={classes.sponserImage}/>
+                <h2>Coding Ninjas</h2>
+            </div>
+        </div>
+
+    </div>
     </div>
   )
 }

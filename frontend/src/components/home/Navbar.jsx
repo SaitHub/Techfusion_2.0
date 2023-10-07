@@ -47,7 +47,7 @@ const Navbar = () => {
         </li>
         <li>
           <Tippy content="Contact us" delay="200">
-            <NavLink to="/" onClick={()=>{setOffset(1900)}}>
+            <NavLink to="/" onClick={()=>{setOffset(2200)}}>
               <MdContactSupport size={25} color="black" />
             </NavLink>
           </Tippy>
