@@ -13,6 +13,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
     const navigate = useNavigate();
+    const [submitting, setSubmitting] = useState(false);
   const [email, setEmail] = useState({
     email: "",
     validateEmail: false,
@@ -150,20 +151,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(email.email, " ", name.name, " ", phno.phno, " ", clgname.clgname, " ",year," ", event.event," ",screenshot.screenshot," ",tid.tid);
-    setEmail({ email: "", validateEmail: false, emailtouch: false });
-    setName({ name: "", validateName: false, nametouch: false });
-    setPhno({ phno: "", validatePhno: false, phnotouch: false });
-    setClgname({ clgname: "", validateClgname: false, clgnametouch: false });
-    setYear("First Year");
-    setEvent({ event: [], validateEvent: false, eventtouch: false });
-    setScreenshot({ screenshot: null, validateScreenshot: false, screenshottouch: false });
-    setTid({ tid: "", validateTid: false, tidtouch: false });
-
-    codeDuetRef.current.checked = false;
-    codeCrushRef.current.checked = false;
-    netVerseRef.current.checked = false;
-    cloudVerseRef.current.checked = false;
-    bidToBuildRef.current.checked = false;
+    setSubmitting(true);
     const userRegistrationData=new FormData();
     userRegistrationData.append("Name",name.name);
     userRegistrationData.append("Email",email.email);
@@ -213,7 +201,22 @@ const Register = () => {
       toast.error(err.response.data.msg);
       // console.log(err)
     }
+    setEmail({ email: "", validateEmail: false, emailtouch: false });
+    setName({ name: "", validateName: false, nametouch: false });
+    setPhno({ phno: "", validatePhno: false, phnotouch: false });
+    setClgname({ clgname: "", validateClgname: false, clgnametouch: false });
+    setYear("First Year");
+    setEvent({ event: [], validateEvent: false, eventtouch: false });
+    setScreenshot({ screenshot: null, validateScreenshot: false, screenshottouch: false });
+    setTid({ tid: "", validateTid: false, tidtouch: false });
+
+    codeDuetRef.current.checked = false;
+    codeCrushRef.current.checked = false;
+    netVerseRef.current.checked = false;
+    cloudVerseRef.current.checked = false;
+    bidToBuildRef.current.checked = false;
     fileRef.current.value=null
+    setSubmitting(false);
   };
   
   return (
@@ -393,7 +396,7 @@ const Register = () => {
                   marginTop: "20px",
                 }}
               >
-                Submit
+                {(submitting)?"Submitting":"Submit"}
               </button>
             </form>
             <div className={classes.right}>
