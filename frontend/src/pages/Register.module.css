@@ -1,168 +1,204 @@
-.registerContainer{
-    height: 100vh;
+.registerContainer {
+  height: 100vh;
 }
-#backArrow{
-    position: fixed;
-    top: 2rem;
-    left: 2rem;
+
+input[type="checkbox"] {
+  /* transform: scale(1.5);
+   */
+  width: 20px;
+  height: 20px;
+  margin: 3px;
 }
-.registerCard{
-    border-radius: 30px;
-    display: flex;
-    margin: 0 auto;
-    justify-content: space-evenly;
-    flex-direction: column;
-    padding: 3rem;
-    gap: 2rem;
-    width: 70%;
-    height: fit-content;
-    align-items: center;
+
+input[type="checkbox"]:checked {
+  /* transform: scale(1.6); */
+  width: 20px;
+  height: 20px;
+  margin: 3px;
+  accent-color: rgb(115, 113, 252);
 }
-.registerCard h2{
-    font-size: 2rem;
-    background: linear-gradient(0deg, #88c3ff, #004f9e);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+
+input[type="text"]::placeholder {
+  opacity: 0.35;
 }
-.formContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 3rem;
-    height: 100%;
-    width: 100%;
+input[type="email"]::placeholder {
+  opacity: 0.35;
 }
-.formContainer form{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-evenly; */
-    gap: 1rem;
-    height: 100%;
-    width: 50%;
+
+#backArrow {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
 }
-.formContainer form select{
-    border-radius: 16px;
-    background: linear-gradient(90deg, #162532 0%, #1B2833 45.44%, #252D35 89.03%);
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25),inset -2px -2px 4px rgba(224, 221, 221, 0.485);
-    padding: 1.2rem;
-    color: white;
-    font-size: 1.15rem;
-    outline: none;
-    width: 100%;
+.registerCard {
+  border-radius: 30px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 2rem;
+  width: 70%;
+  height: fit-content;
+  align-items: center;
 }
-.formContainer form option{
-    color: white;
-    font-size: 1.15rem;
-    background-color: #162532;
-    border: none;
-    outline: none;
+.registerCard h2 {
+  font-size: 2rem;
+  background: linear-gradient(0deg, #88c3ff, #004f9e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.formContainer button:hover{
-    filter: brightness(0.9);
+.formContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 3rem;
+  height: 100%;
+  width: 100%;
 }
-.right{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 2rem;
-    height: 100%;
-    width: 50%;
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  gap: 1rem;
+  height: 100%;
+  width: 50%;
 }
-.right img{
-    width: 350px;
-    height: 350px;
-    object-fit: contain;
+.formContainer form select {
+  border-radius: 16px;
+  background: linear-gradient(
+    90deg,
+    #162532 0%,
+    #1b2833 45.44%,
+    #252d35 89.03%
+  );
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25),
+    inset -2px -2px 4px rgba(224, 221, 221, 0.485);
+  padding: 1.2rem;
+  color: white;
+  font-size: 1.15rem;
+  outline: none;
+  width: 100%;
 }
-.qrSection{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 1rem;
-    height: fit-content;
-    width: 100%;
-    padding: 1rem;
+.formContainer form option {
+  color: white;
+  font-size: 1.15rem;
+  background-color: #162532;
+  border: none;
+  outline: none;
 }
-.qrSection h3{
-    font-size: 1.3rem;
-    font-family: 'ubuntu', sans-serif;
-    color: white;
-    text-align: center;
+.formContainer button:hover {
+  filter: brightness(0.9);
 }
-.qrSection img{
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+  height: 100%;
+  width: 50%;
 }
-.ip{
-    color: rgb(173, 176, 176);
-    font-size: 1.123rem;
-    font-family: 'ubuntu', sans-serif;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+.right img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
 }
-.ip label{
-    margin-left: 0.3rem;
+.qrSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  height: fit-content;
+  width: 100%;
+  padding: 1rem;
 }
-.checkgroup{
-    border-radius: 16px;
-    background: linear-gradient(90deg, #162532 0%, #1B2833 45.44%, #252D35 89.03%);
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25),inset -2px -2px 4px rgba(224, 221, 221, 0.485);
-    padding: 1.2rem;
-    color: white;
-    font-size: 1.112rem;
-    outline: none;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.qrSection h3 {
+  font-size: 1.3rem;
+  font-family: "ubuntu", sans-serif;
+  color: white;
+  text-align: center;
+}
+.qrSection img {
+  width: 450px;
+  height: 450px;
+  object-fit: contain;
+}
+.ip {
+  color: rgb(173, 176, 176);
+  font-size: 1.123rem;
+  font-family: "ubuntu", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.ip label {
+  margin-left: 0.3rem;
+}
+.checkgroup {
+  border-radius: 16px;
+  background: linear-gradient(
+    90deg,
+    #162532 0%,
+    #1b2833 45.44%,
+    #252d35 89.03%
+  );
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25),
+    inset -2px -2px 4px rgba(224, 221, 221, 0.485);
+  padding: 1.2rem;
+  color: white;
+  font-size: 1.112rem;
+  outline: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Media query for mobile view */
 @media screen and (max-width: 768px) {
-    .registerCard {
-        width: 90%;
-        padding: 2rem;
-        gap: 1rem;
-    }
+  .registerCard {
+    width: 90%;
+    padding: 2rem;
+    gap: 1rem;
+  }
 
-    .formContainer {
-        flex-direction: column-reverse;
-        gap: 2rem;
-    }
+  .formContainer {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
 
-    .formContainer form {
-        width: 100%;
-    }
+  .formContainer form {
+    width: 100%;
+  }
 
-    .formContainer form select {
-        font-size: 1rem;
-        padding: 1rem;
-    }
+  .formContainer form select {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 
-    .right {
-        width: 100%;
-        text-align: center;
-    }
+  .right {
+    width: 100%;
+    text-align: center;
+  }
 
-    .right img {
-        width: 100%;
-        height: auto;
-    }
+  .right img {
+    width: 100%;
+    height: auto;
+  }
 
-    .qrSection img {
-        width: 150px;
-        height: 150px;
-    }
+  .qrSection img {
+    width: 150px;
+    height: 150px;
+  }
 
-    .ip {
-        font-size: 1rem;
-    }
+  .ip {
+    font-size: 1rem;
+  }
 
-    .checkgroup {
-        font-size: 1rem;
-        padding: 1rem;
-    }
+  .checkgroup {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }
