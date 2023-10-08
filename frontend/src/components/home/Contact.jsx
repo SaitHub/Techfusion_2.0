@@ -4,15 +4,23 @@ import Button from "../Button";
 import contactlogo from "../../assets/contactlogo.png";
 import styles from "../Floating.module.css";
 import classes from "./Contact.module.css";
-import toast,{Toaster} from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 const Contact = () => {
-  const [email, setEmail] = useState({ email: "", validateEmail: false,emailtouch:false});
-  const [name, setName] = useState({ name: "", validateName: false,nametouch:false});
+  const [email, setEmail] = useState({
+    email: "",
+    validateEmail: false,
+    emailtouch: false,
+  });
+  const [name, setName] = useState({
+    name: "",
+    validateName: false,
+    nametouch: false,
+  });
   const [suggestions, setSuggestions] = useState({
     suggestions: "",
     validateSuggestions: false,
-    suggestionstouch:false
+    suggestionstouch: false,
   });
   const [isFormValid, setIsFormValid] = useState(false);
   const handleEmailChange = (e) => {
@@ -20,44 +28,45 @@ const Contact = () => {
       email: e.target.value,
       validateEmail:
         e.target.value.trim().length > 0 && e.target.value.trim().includes("@"),
-        emailtouch:true
+      emailtouch: true,
     });
   };
   const handleNameChange = (e) => {
     setName({
       name: e.target.value,
       validateName: e.target.value.trim().length > 0,
-      nametouch:true
+      nametouch: true,
     });
   };
   const handleSuggestionsChange = (e) => {
     setSuggestions({
       suggestions: e.target.value,
       validateSuggestions: e.target.value.trim().length > 0,
-      suggestionstouch:true
+      suggestionstouch: true,
     });
   };
-  const handleNameBlur=(e)=>{
+  const handleNameBlur = (e) => {
     setName({
-      name:name.name.trim(),
-      validateName:name.name.trim().length>0,
-      nametouch:true
-    })
-  }
-  const handleEmailBlur=(e)=>{
+      name: name.name.trim(),
+      validateName: name.name.trim().length > 0,
+      nametouch: true,
+    });
+  };
+  const handleEmailBlur = (e) => {
     setEmail({
-      email:email.email.trim(),
-      validateEmail:email.email.trim().length>0&&email.email.trim().includes('@'),
-      emailtouch:true
-    })
-  }
-  const handleSuggestionsBlur=(e)=>{
+      email: email.email.trim(),
+      validateEmail:
+        email.email.trim().length > 0 && email.email.trim().includes("@"),
+      emailtouch: true,
+    });
+  };
+  const handleSuggestionsBlur = (e) => {
     setSuggestions({
-      suggestions:suggestions.suggestions.trim(),
-      validateSuggestions:suggestions.suggestions.trim().length>0,
-      suggestionstouch:true
-    })
-  }
+      suggestions: suggestions.suggestions.trim(),
+      validateSuggestions: suggestions.suggestions.trim().length > 0,
+      suggestionstouch: true,
+    });
+  };
   useEffect(() => {
     setIsFormValid(
       email.validateEmail &&
@@ -67,30 +76,37 @@ const Contact = () => {
   }, [email.email, name.name, suggestions.suggestions]);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const contact=new FormData();
-    contact.append('name',name.name)
-    contact.append('email',email.email)
-    contact.append('suggestions',suggestions.suggestions)
-    try{
-    const data=await axios.post('https://techfusion.onrender.com/user/contact',contact,{
-      withCredentials:true,
-      headers:{
-        'Content-Type':'application/json'
+    const contact = new FormData();
+    contact.append("name", name.name);
+    contact.append("email", email.email);
+    contact.append("suggestions", suggestions.suggestions);
+    try {
+      const data = await axios.post(
+        "https://techfusion.onrender.com/user/contact",
+        contact,
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (data.status === 201) {
+        toast.success("Your response has been recorded");
       }
-    });
-      if(data.status===201){
-        toast.success('Your response has been recorded');
-      }
-      if(data.status===400){
+      if (data.status === 400) {
         throw new Error(data.message);
       }
-  }
-    catch(err){
+    } catch (err) {
       toast.error("Something went wrong");
     }
-    setEmail({ email: "", validateEmail: false,emailtouch:false });
-    setName({ name: "", validateName: false,nametouch:false });
-    setSuggestions({ suggestions: "", validateSuggestions: false,suggestionstouch:false });
+    setEmail({ email: "", validateEmail: false, emailtouch: false });
+    setName({ name: "", validateName: false, nametouch: false });
+    setSuggestions({
+      suggestions: "",
+      validateSuggestions: false,
+      suggestionstouch: false,
+    });
   };
   return (
     <div className={classes.contactContainer}>
@@ -105,10 +121,10 @@ const Contact = () => {
               placeholder: "Name",
               style: { width: "100%" },
               onChange: handleNameChange,
-              onBlur:handleNameBlur
+              onBlur: handleNameBlur,
             }}
           />
-          {!name.validateName&&name.nametouch && (
+          {!name.validateName && name.nametouch && (
             <h5 style={{ color: "red" }}>* Name field is Mandatory</h5>
           )}
           <Input
@@ -119,14 +135,14 @@ const Contact = () => {
               placeholder: "Email",
               style: { width: "100%" },
               onChange: handleEmailChange,
-              onBlur:handleEmailBlur
+              onBlur: handleEmailBlur,
             }}
           />
-          {!email.validateEmail&&email.emailtouch && (
+          {!email.validateEmail && email.emailtouch && (
             <h5 style={{ color: "red" }}>* Incorrect or empty email</h5>
           )}
           <textarea
-            placeholder="Suggetions.."
+            placeholder="Suggestions"
             value={suggestions.suggestions}
             name="suggestions"
             rows={10}
@@ -134,22 +150,21 @@ const Contact = () => {
             onChange={handleSuggestionsChange}
             onBlur={handleSuggestionsBlur}
           />
-          {!suggestions.validateSuggestions&&suggestions.suggestionstouch && (
+          {!suggestions.validateSuggestions && suggestions.suggestionstouch && (
             <h5 style={{ color: "red" }}>* Suggestions are Mandatory</h5>
           )}
-          <Toaster/>
+          <Toaster />
           <button
             disabled={!isFormValid}
             style={{
               color: "white",
-              backgroundColor: (isFormValid)?"#2B6CB0":"#4a5663",
+              backgroundColor: isFormValid ? "#2B6CB0" : "#4a5663",
               width: "160px",
               height: "40px",
               borderRadius: "15px",
               cursor: isFormValid ? "pointer" : "not-allowed",
               outline: "none",
               fontSize: "1.2rem",
-            
             }}
           >
             Submit
@@ -162,4 +177,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
