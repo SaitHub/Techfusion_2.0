@@ -396,7 +396,7 @@ const Register = () => {
                   marginTop: "20px",
                 }}
               >
-                {(submitting)?"Submitting":"Submit"}
+                {(submitting)?"Submitting...":"Submit"}
               </button>
             </form>
             <div className={classes.right}>
