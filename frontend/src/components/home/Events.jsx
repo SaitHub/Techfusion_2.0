@@ -1,10 +1,10 @@
 import React from "react";
-import b2b from "../../assets/b2b.jpeg";
+import b2b from "../../assets/b2b.jpg";
 import classes from "./Events.module.css";
 import codec from "../../assets/codec.jpg";
 import coded from "../../assets/coded.jpg";
 import cloudv from "../../assets/cloudv.jpeg";
-import netq from "../../assets/netq.jpeg";
+import netq from "../../assets/netq.jpg";
 import Card from "../Card";
 import Button from "../Button";
 import sponser from "../../assets/ninja.png";
@@ -88,6 +88,7 @@ const Events = () => {
         <div className={classes.sponserSection}>
           <div className={classes.sponserCard}>
             <img
+              loading="lazy"
               src={sponser}
               alt="The Sparks Foundation"
               className={classes.sponserImage}
