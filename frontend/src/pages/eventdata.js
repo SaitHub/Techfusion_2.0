@@ -1,20 +1,20 @@
-const eventsdata = [
-    {
+const eventsdata=[
+    {   
         eventName: "CodeCrush",
         rules: [
             [
-                "CodeCrush is a programming competition that offers two distinct tracks: Novice and Expert.",
-                "The Novice track is exclusively reserved for first-year degree, first-year diploma, second-year diploma students, while the Expert track is open to students in their second, third, and final years degree and third-year diploma.",
-                "This event is entirely online, taking place on the renowned CodeStudio platform, a leading resource for coding assessments and skill evaluations.",
-                "Participants will have two hours to complete the contest, which will challenge their programming abilities and technical knowledge.",
-                "The top four performers will receive prizes, with a special recognition awarded to the top female participant.",
-                "Participation in the WCE Campus is not mandatory, as this event is fully remote and accessible from any location."
+            "CodeCrush is a programming competition that offers two distinct tracks: Novice and Expert.",
+            "The Novice track is exclusively reserved for first-year degree, first-year diploma, second-year diploma students, while the Expert track is open to students in their second, third, and final years degree and third-year diploma.",
+            "This event is entirely online, taking place on the renowned HackerRank platform, a leading resource for coding assessments and skill evaluations.",
+            "Participants will have two hours to complete the contest, which will challenge their programming abilities and technical knowledge.",
+            "The top four performers will receive prizes, with a special recognition awarded to the top female participant.",
+            "Participation in the WCE Campus is not mandatory, as this event is fully remote and accessible from any location."
             ]
         ],
         description: "This event will be 2 hour long online coding contest.",
         timeline: [
             {
-                name: "Online Competetion",
+                name: "Online Competition",
                 date: "27 October",
                 time: "9:00 PM -11:00 PM",
                 duration: "2.00 hrs",
@@ -40,14 +40,14 @@ const eventsdata = [
                 "Any team caught engaging in malpractice will be disqualified immediately."
             ],
             [
-                "Round 2 is a classical coding round will takes place on the  CodeStudio platform.",
+                "Round 2 is a classical coding round will takes place on the  HackerRank platform.",
                 "This round will be consisting of the coding questions whose difficulty level varies from easy to hard.",
                 "All programming languages are supported, giving teams the flexibility to use their preferred languages.",
                 "Each team can use their own laptop or we will provide with one PC to ensure a level playing field.",
                 "We take the issue of malpractice very seriously, and any team caught engaging in such activities will be disqualified immediately."
             ],
             [
-                "Round 3 is the final round of the competition and will be conducted on CodeStudio",
+                "Round 3 is the final round of the competition and will be conducted on hackerrank",
                 "The duration of this round is 1hr.",
                 "This round will be consisting of simple input and output a participants have to write the logic/code that satisfies given input/output relation.",
                 "Each team can use their own laptop or we will provide with one PC to ensure a level playing field.",
@@ -84,12 +84,12 @@ const eventsdata = [
         paticipation: "Team of 2",
         entryfee: 150,
         venue: "Main CCF, IT Department",
-        contact: [
+        contact:[
             "Vishwas Nalawade 9309320694",
             "Aditya Tolgekar 7030702652"
         ]
     },
-    {
+    {   
         eventName: "CloudVerse",
         Contents: [
             "Basics of Cloud Computing & why it is needed",
@@ -102,18 +102,16 @@ const eventsdata = [
             "Demo and Hands-on, along with quiz at the end"
         ],
         description: "An intensive 1-day workshop on cloud computing and AWS hands-on included.",
-        rules: [],
+        rules:[],
         timeline: [
-            {
-                name: "Conceptual Lerning",
+            {   name: "Conceptual Lerning",
                 date: "29 October",
-                time: "9:30 PM - 12:30 PM",
+                time: "9:30 AM - 11:30 AM",
                 duration: "3 hrs",
                 venue: "Main CCF, IT Department",
                 participation: "Single Participation"
             },
-            {
-                name: "Demo and Hands on",
+            {   name: "Demo and Hands on",
                 date: "29 October",
                 time: "1:30 PM - 5:00 PM",
                 duration: "3:30 hrs",
@@ -129,7 +127,7 @@ const eventsdata = [
         ]
     },
     {
-        eventName: "NetVerse",
+        eventName: "NetQuest",
         Contents: [
             "Introduction to Computer Networks",
             "OSI and TCP/IP Model",
@@ -138,20 +136,18 @@ const eventsdata = [
             "Applications of Computer Networks",
             "Hands on"
         ],
-        rules: []
+        rules:[]
         ,
         description: "A Comprehensive Computer Network Workshop with Practical Hands-On Sessions.",
         timeline: [
-            {
-                name: "Session 1",
+            {   name: "Session 1",
                 date: "28 October",
                 time: "9:30 AM - 11:30 AM",
                 duration: "2 hrs",
                 venue: "Main CCF, IT Department",
                 participation: "Single Participation"
             },
-            {
-                name: "Session 2",
+            {   name: "Session 2",
                 date: "28 October",
                 time: "12:30 PM - 2:30 PM",
                 duration: "2 hrs",
@@ -168,50 +164,47 @@ const eventsdata = [
     },
     {
         eventName: "Bid 2 Build",
-        rules: [
+        rules:[
             [
-                "Each team will have min. 2 and max. 4 players. This round will test your general knowledge of Cricket.",
+                "Each team will have min. 2 and max. 4 players This round will test your general knowledge of Cricket.",
                 "Some scenarios will be given and participants have to predict the correct answer.",
-                "Each question will carry 4 marks for correct answer and -1 for wrong answer.",
+                "Each question carries 4 marks for correct answer and -2 for wrong answer.",
                 " Some questions will have multiple correct answers (marks will be given as per the correct options marked).",
-                " In case of tie-breaker, the team with minimum wrong answers marked will be considered."
+                " In case of tie-breaker the team with least wrong answers marked will be considered."
             ],
             [
-                "A ground will be given to all teams. Details of that particular ground will be provided. Use of mobile is prohibited for this round.",
-                "A fixed credit will be given to each team. A list of players with certain credits will be provided.",
-                " Each group is expected to make a team of 5 players within that given credit. They have to make a team in such a way that the team consists of 2 batsmen, 2 bowlers and 1 all-rounder.",
-                " A team can have a maximum 1 foreign player. At the end of this round the participants' team will be judged by our cricket experts."
+                "A ground will be given to all teams.Details of that particular ground will be provided and use of mobile is prohibited for this round.",
+                "A fixed credit will be given to each team. A list of players with certain credit will be provided.",
+                " Each group has to make a team of 5 players within that given credit. They have to make a team in such a way that the team consists of 2 batsmen,2 bowlers and 1 allrounder.",
+                " A team can have a maximum 1 foreign player. At the end of this round their team will be judged by our cricket experts."
             ],
             [
                 "Each team will be assigned with a certain amount ofmoney which they can use to bid for a player",
-                "A team must have strictly 11 players in their squad. 4 players will be provided to each team prior to the start of the auction. Base price of the players will be reduced from amount assigned to team.",
-                "Players will be categorized into different groups based on their playing style and experience.",
-                "Once a team has exhausted its amount or has a maximum number of players in their squad, they can no longer bid for a player.",
-                "If there is a tie between the teams, then the team which has more fund left will be declared as the winner.",
-                "Best team which can make the better squad will be declared as winner. In case of any conflicts, the final decision will be taken by the judges"
+                "A team must have strictly 11 players in their squad. 4 players will be provided to each team prior to the start of the auction. Base price of the players will bereduced from amount assigned to team.",
+                "Players will be categorized into different groups basedon their playing style and experience.",
+                "Once a team has exhausted its amount or has a maximum number of players in their squad, they canno longer bid for a player.",
+                "If there is a tie between the teams, then the team which has more fund remaining will be declared as thewinner.",
+                "Best team which can make the better squad declaredas winner. In case of any conflicts, the final decision will be takenby the judges"
             ]
         ]
         ,
         description: "Bid with confidence and win big: Auction excitement awaits!",
         timeline: [
-            {
-                name: "Cricket Quiz",
+            {   name: "Cricket Quiz",
                 date: "24 October",
                 time: "10:00 AM - 11:00 AM",
                 duration: "1 hrs",
                 venue: "WCE Sangli",
                 participation: "Team Participation"
             },
-            {
-                name: "Retention Team",
+            {   name: "Retention Team",
                 date: "24 October",
                 time: "12:30 PM - 2:00 PM",
                 duration: "90 min",
                 venue: "WCE Sangli",
                 participation: "Team Participation"
             },
-            {
-                name: "Dream Team",
+            {   name: "Dream Team",
                 date: "24 October",
                 time: "3:00 PM - 5:00 PM",
                 duration: "3 hrs",

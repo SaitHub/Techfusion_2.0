@@ -3,7 +3,7 @@ import classes from "./Register.module.css";
 import Card from "../components/Card";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import regImage from "../assets/regImage.png";
-import qr from "../assets/qr.jpg";
+import qr from "../assets/qr.png";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/Input";
@@ -261,13 +261,13 @@ const Register = () => {
           <div className={classes.formContainer}>
             <form onSubmit={handleSubmit}>
               <div className={classes.ip}>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">Name: (For Bid 2 Bid and CodeDuet enter name of all team members)</label>
                 <Input
                   properties={{
                     type: "text",
                     name: "name",
                     value: name.name,
-                    placeholder: "Your Name here",
+                    placeholder: "Name (,)",
                     style: { width: "100%" },
                     onChange: handleNameChange,
                     onBlur: handleNameBlur,
