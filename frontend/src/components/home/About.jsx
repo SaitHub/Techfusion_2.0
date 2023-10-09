@@ -26,7 +26,7 @@ const About = () => {
             2.0! 🚀🌕✨
           </p>
         </div>
-        <img className={styles.floating} src={aboutus} alt="#" />
+        <img loading="lazy" className={styles.floating} src={aboutus} alt="#" />
       </div>
     </div>
   );

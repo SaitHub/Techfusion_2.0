@@ -3,11 +3,11 @@
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   gap: 2rem;
 }
-.uparrow{
+.uparrow {
   border-radius: 50%;
   width: 70px;
   height: 70px;
@@ -19,6 +19,6 @@
   right: 0.8rem;
   cursor: pointer;
 }
-.uparrow:hover{
+.uparrow:hover {
   background-color: rgba(147, 197, 246, 1);
 }

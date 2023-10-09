@@ -145,7 +145,7 @@ const eventsdata = [
             {
                 name: "Session 1",
                 date: "28 October",
-                time: "9:30 PM - 11:30 PM",
+                time: "9:30 AM - 11:30 AM",
                 duration: "2 hrs",
                 venue: "Main CCF, IT Department",
                 participation: "Single Participation"
@@ -170,25 +170,25 @@ const eventsdata = [
         eventName: "Bid 2 Build",
         rules: [
             [
-                "Each team will have min. 2 and max. 4 players This round will test your general knowledge of Cricket.",
+                "Each team will have min. 2 and max. 4 players. This round will test your general knowledge of Cricket.",
                 "Some scenarios will be given and participants have to predict the correct answer.",
-                "Each question carries 4 marks for correct answer and -1 for wrong answer.",
+                "Each question will carry 4 marks for correct answer and -1 for wrong answer.",
                 " Some questions will have multiple correct answers (marks will be given as per the correct options marked).",
-                " In case of tie-breaker the team with least wrong answers marked will be considered."
+                " In case of tie-breaker, the team with minimum wrong answers marked will be considered."
             ],
             [
-                "A ground will be given to all teams.Details of that particular ground will be provided and use of mobile is prohibited for this round.",
-                "A fixed credit will be given to each team. A list of players with certain credit will be provided.",
-                " Each group has to make a team of 5 players within that given credit. They have to make a team in such a way that the team consists of 2 batsmen,2 bowlers and 1 allrounder.",
-                " A team can have a maximum 1 foreign player. At the end of this round their team will be judged by our cricket experts."
+                "A ground will be given to all teams. Details of that particular ground will be provided. Use of mobile is prohibited for this round.",
+                "A fixed credit will be given to each team. A list of players with certain credits will be provided.",
+                " Each group is expected to make a team of 5 players within that given credit. They have to make a team in such a way that the team consists of 2 batsmen, 2 bowlers and 1 all-rounder.",
+                " A team can have a maximum 1 foreign player. At the end of this round the participants' team will be judged by our cricket experts."
             ],
             [
                 "Each team will be assigned with a certain amount ofmoney which they can use to bid for a player",
-                "A team must have strictly 11 players in their squad. 4 players will be provided to each team prior to the start of the auction. Base price of the players will bereduced from amount assigned to team.",
-                "Players will be categorized into different groups basedon their playing style and experience.",
-                "Once a team has exhausted its amount or has a maximum number of players in their squad, they canno longer bid for a player.",
-                "If there is a tie between the teams, then the team which has more fund remaining will be declared as thewinner.",
-                "Best team which can make the better squad declaredas winner. In case of any conflicts, the final decision will be takenby the judges"
+                "A team must have strictly 11 players in their squad. 4 players will be provided to each team prior to the start of the auction. Base price of the players will be reduced from amount assigned to team.",
+                "Players will be categorized into different groups based on their playing style and experience.",
+                "Once a team has exhausted its amount or has a maximum number of players in their squad, they can no longer bid for a player.",
+                "If there is a tie between the teams, then the team which has more fund left will be declared as the winner.",
+                "Best team which can make the better squad will be declared as winner. In case of any conflicts, the final decision will be taken by the judges"
             ]
         ]
         ,

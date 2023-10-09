@@ -10,17 +10,17 @@ import Tippy from "@tippyjs/react";
 import classes from "./Navbar.module.css";
 // import * as scroll from 'react-scroll'
 const Navbar = () => {
-  const [offset,setOffset] =useState(0);
+  const [offset, setOffset] = useState(0);
   useEffect(() => {
-    window.scrollTo(0,offset,{
-      behavior:'smooth'
-    })
-},[offset])
+    window.scrollTo(0, offset, {
+      behavior: "smooth",
+    });
+  }, [offset]);
 
   return (
     <nav className={classes.navContainer}>
       <div className={classes.logo}>
-        <img src={sait} alt="#" />
+        <img loading="lazy" src={sait} alt="#" />
         <h1>SAIT</h1>
       </div>
       <ul className={classes.navItems}>
@@ -33,29 +33,56 @@ const Navbar = () => {
         </li>
         <li>
           <Tippy content="About us" delay="200">
-            <NavLink to="/" onClick={()=>{setOffset(400)}}>
-              <img src={about} alt="#" width="25px" height="25px" />
+            <NavLink
+              to="/"
+              onClick={() => {
+                setOffset(400);
+              }}
+            >
+              <img
+                loading="lazy"
+                src={about}
+                alt="#"
+                width="25px"
+                height="25px"
+              />
             </NavLink>
           </Tippy>
         </li>
         <li>
           <Tippy content="Events" delay="200">
-            <NavLink to="/" onClick={()=>{setOffset(800)}}>
+            <NavLink
+              to="/"
+              onClick={() => {
+                setOffset(800);
+              }}
+            >
               <BiSolidTrophy size={25} color="black" />
             </NavLink>
           </Tippy>
         </li>
         <li>
           <Tippy content="Contact us" delay="200">
-            <NavLink to="/" onClick={()=>{setOffset(2200)}}>
+            <NavLink
+              to="/"
+              onClick={() => {
+                setOffset(2200);
+              }}
+            >
               <MdContactSupport size={25} color="black" />
             </NavLink>
           </Tippy>
         </li>
         <li>
-          <Tippy content="Register" delay="200" >
+          <Tippy content="Register" delay="200">
             <NavLink to="/register">
-              <img src={register} alt="#" width="25px" height="25px" />
+              <img
+                loading="lazy"
+                src={register}
+                alt="#"
+                width="25px"
+                height="25px"
+              />
             </NavLink>
           </Tippy>
         </li>

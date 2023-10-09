@@ -508,9 +508,9 @@ const Register = () => {
               </button>
             </form>
             <div className={classes.right}>
-              <img src={regImage} alt="#" />
+              <img loading="lazy" src={regImage} alt="#" />
               <div className={classes.qrSection}>
-                <img src={qr} alt="#" />
+                <img loading="lazy" src={qr} alt="#" />
                 <h4
                   style={{
                     color: "white",

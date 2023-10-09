@@ -55,10 +55,10 @@ const EventPage = (props) => {
           </div>
         </div>
         <div id="floating" className="gridContainers">
-          <img src={imageArray[img1Id]} id="img1" />
+          <img loading="lazy" src={imageArray[img1Id]} id="img1" />
         </div>
         <div id="floating" className="gridContainers">
-          <img id="img2" src={imageArray[img2Id]}></img>
+          <img loading="lazy" id="img2" src={imageArray[img2Id]}></img>
         </div>
         <div id="rulesContainer" className="gridContainers">
           {compeleteRules.length == 0 ? (

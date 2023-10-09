@@ -170,7 +170,12 @@ const Contact = () => {
             Submit
           </button>
         </form>
-        <img src={contactlogo} className={styles.floating} alt="#" />
+        <img
+          loading="lazy"
+          src={contactlogo}
+          className={styles.floating}
+          alt="#"
+        />
       </div>
     </div>
   );
