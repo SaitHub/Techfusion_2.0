@@ -179,6 +179,7 @@ const Register = () => {
     userRegistrationData.append("Year_of_Study", year);
     userRegistrationData.append("Events", event.event);
     userRegistrationData.append("Transaction_id", tid.tid);
+
     const paymentScreenshot = new FormData();
     paymentScreenshot.append("file", screenshot.screenshot);
     paymentScreenshot.append("upload_preset", "techfusion_payment"); // Specify your upload preset name here
@@ -427,7 +428,7 @@ const Register = () => {
                 )}
               </div>
               <div className={classes.ip}>
-                <label htmlFor="payment">Payment Screenshot:</label>
+                <label htmlFor="payment">Payment Screenshot: (.jpg, .jpeg or .png and size &lt; 100 kb)</label>
                 <Input
                   properties={{
                     type: "file",
@@ -435,17 +436,18 @@ const Register = () => {
                     ref: fileRef,
                     placeholder: "Payment Screenshot",
                     style: { width: "100%" },
+                    accept:".jpg, .jpeg, .png",
                     onChange: (e) => {
                       setScreenshot({
                         screenshot: e.target.files[0],
-                        validateScreenshot: e.target.files[0] !== null,
+                        validateScreenshot: e.target.files[0] !== null&&e.target.files[0].size<=100*1024,
                         screenshottouch: true,
                       });
                     },
                     onBlur: (e) => {
                       setScreenshot({
                         screenshot: screenshot.screenshot,
-                        validateScreenshot: screenshot.screenshot !== null,
+                        validateScreenshot: screenshot.screenshot !== null&&screenshot.screenshot.size<=100*1024,
                         screenshottouch: true,
                       });
                     },
@@ -453,7 +455,7 @@ const Register = () => {
                 />
                 {!screenshot.validateScreenshot &&
                   screenshot.screenshottouch && (
-                    <h5 style={{ color: "red" }}>* Screenshot is Mandatory</h5>
+                    <h5 style={{ color: "red" }}>* Invalid screenshot type or size must not exceed 100 KB.</h5>
                   )}
               </div>
               <div className={classes.ip}>
