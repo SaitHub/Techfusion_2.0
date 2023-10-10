@@ -347,6 +347,9 @@ const Register = () => {
                   <option value="Second Year">Second Year</option>
                   <option value="Third Year">Third Year</option>
                   <option value="Fourth Year">Fourth Year</option>
+                  <option value="Diploma First Year">Diploma First Year</option>
+                  <option value="Diploma Second Year">Diploma Second Year</option>
+                  <option value="Diploma Third Year">Diploma Third Year</option>
                 </select>
               </div>
               <div className={classes.ip}>
