@@ -3,7 +3,7 @@ import classes from "./Register.module.css";
 import Card from "../components/Card";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import regImage from "../assets/regImage.png";
-import qr from "../assets/qr.png";
+import qr from "../assets/qr.jpg";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/Input";
