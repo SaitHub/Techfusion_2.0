@@ -8,6 +8,8 @@ import netq from "../../assets/netq.jpg";
 import Card from "../Card";
 import Button from "../Button";
 import sponser from "../../assets/ninja.png";
+import boi from "../../assets/boi.jpg";
+import sakal from "../../assets/sakal.png";
 import { useNavigate } from "react-router-dom";
 const Events = () => {
   const navigate = useNavigate();
@@ -93,7 +95,34 @@ const Events = () => {
               alt="The Sparks Foundation"
               className={classes.sponserImage}
             />
+            <div className={classes.txte}>
             <h2>Coding Ninjas</h2>
+            <p>- Platform Partners</p>
+            </div>
+          </div>
+          <div className={classes.sponserCard}>
+            <img
+              loading="lazy"
+              src={boi}
+              alt="The Sparks Foundation"
+              className={classes.sponserImage}
+            />
+            <div className={classes.txte}>
+            <h2>Bank of India</h2>
+            <p>- Title Sponsors</p>
+            </div>
+          </div>
+          <div className={classes.sponserCard}>
+            <img
+              loading="lazy"
+              src={sakal}
+              alt="The Sparks Foundation"
+              className={classes.sponserImage}
+            />
+            <div className={classes.txte}>
+            <h2>Sakal</h2>
+            <p>- Media Partners</p>
+            </div>
           </div>
         </div>
       </div>
