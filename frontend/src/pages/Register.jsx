@@ -55,7 +55,7 @@ const Register = () => {
   const codeDuetRef = useRef(null);
   const codeCrushRef = useRef(null);
   // const netVerseRef = useRef(null);
-  const cloudVerseRef = useRef(null);
+  // const cloudVerseRef = useRef(null);
   const bidToBuildRef = useRef(null);
   const fileRef = useRef(null);
 
@@ -238,7 +238,7 @@ const Register = () => {
     codeDuetRef.current.checked = false;
     codeCrushRef.current.checked = false;
     // netVerseRef.current.checked = false;
-    cloudVerseRef.current.checked = false;
+    // cloudVerseRef.current.checked = false;
     bidToBuildRef.current.checked = false;
     fileRef.current.value = null;
     setSubmitting(false);
@@ -399,11 +399,12 @@ const Register = () => {
                     />{" "}
                     NetVerse (₹150)
                   </label>
-                  <label>
+                  <label style={{textDecoration:"line-through",color:"gray"}}>
                     <input
                       type="checkbox"
                       name="CloudVerse"
-                      ref={cloudVerseRef}
+                      // ref={cloudVerseRef}
+                      disabled={true}
                       onChange={(e) => {
                         handleEventChange(e);
                       }}
@@ -525,7 +526,7 @@ const Register = () => {
                     fontSize: "1.123rem",
                   }}
                 >
-                  Note: NetVerse entries are closed.
+                  Note: NetVerse and CloudVerse entries are closed.<h5>* contact respective leads for more info.</h5>
                 </h4>
               </div>
             </div>
