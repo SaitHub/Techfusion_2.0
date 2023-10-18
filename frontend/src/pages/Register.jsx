@@ -3,7 +3,7 @@ import classes from "./Register.module.css";
 import Card from "../components/Card";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import regImage from "../assets/regImage.png";
-import qr from "../assets/qr.jpg";
+import qr from "../assets/qr.png";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/Input";
@@ -54,7 +54,7 @@ const Register = () => {
 
   const codeDuetRef = useRef(null);
   const codeCrushRef = useRef(null);
-  const netVerseRef = useRef(null);
+  // const netVerseRef = useRef(null);
   const cloudVerseRef = useRef(null);
   const bidToBuildRef = useRef(null);
   const fileRef = useRef(null);
@@ -237,7 +237,7 @@ const Register = () => {
 
     codeDuetRef.current.checked = false;
     codeCrushRef.current.checked = false;
-    netVerseRef.current.checked = false;
+    // netVerseRef.current.checked = false;
     cloudVerseRef.current.checked = false;
     bidToBuildRef.current.checked = false;
     fileRef.current.value = null;
@@ -383,11 +383,13 @@ const Register = () => {
                     />{" "}
                     CodeCrush (₹60)
                   </label>
-                  <label>
+                  <label style={{textDecoration:"line-through",color:"gray"}}>
                     <input
                       type="checkbox"
                       name="NetVerse"
-                      ref={netVerseRef}
+                      // ref={netVerseRef}
+                      disabled={true}
+                      
                       onChange={(e) => {
                         handleEventChange(e);
                       }}
@@ -523,8 +525,7 @@ const Register = () => {
                     fontSize: "1.123rem",
                   }}
                 >
-                  Note: Combine fee for NetVerse
-                  <br /> and CloudVerse is ₹200.
+                  Note: NetVerse entries are closed.
                 </h4>
               </div>
             </div>
