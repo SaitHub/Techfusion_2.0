@@ -10,6 +10,7 @@ import Input from "../components/Input";
 import { useRef } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import bothqr from "../assets/qr.jpg"
 
 const Register = () => {
   const navigate = useNavigate();
@@ -518,7 +519,7 @@ const Register = () => {
             <div className={classes.right}>
               <img loading="lazy" src={regImage} alt="#" />
               <div className={classes.qrSection}>
-                <img loading="lazy" src={qr} alt="#" />
+                <img loading="lazy" src={bothqr} alt="#" />
                 <h4
                   style={{
                     color: "white",
