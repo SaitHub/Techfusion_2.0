@@ -6,7 +6,7 @@ import Button from "../Button";
 import prizes from "../../assets/prizeposter.png";
 import winners from "../../assets/winners.png";
 import { useNavigate } from "react-router-dom";
-import bgvideo from "../../assets/bgvideo.mp4";
+// import bgvideo from "../../assets/bgvideo.mp4";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -54,9 +54,9 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <video preload autoPlay loop muted className={classes.backgroundVideo}>
+        {/* <video preload autoPlay loop muted className={classes.backgroundVideo}>
           <source src={bgvideo} type="video/mp4" />
-        </video>
+        </video> */}
       </div>
     </div>
   );
