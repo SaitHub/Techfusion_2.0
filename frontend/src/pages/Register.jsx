@@ -57,7 +57,7 @@ const Register = () => {
   const codeCrushRef = useRef(null);
   // const netVerseRef = useRef(null);
   // const cloudVerseRef = useRef(null);
-  const bidToBuildRef = useRef(null);
+  // const bidToBuildRef = useRef(null);
   const fileRef = useRef(null);
 
   const handleEmailChange = (e) => {
@@ -240,7 +240,7 @@ const Register = () => {
     codeCrushRef.current.checked = false;
     // netVerseRef.current.checked = false;
     // cloudVerseRef.current.checked = false;
-    bidToBuildRef.current.checked = false;
+    // bidToBuildRef.current.checked = false;
     fileRef.current.value = null;
     setSubmitting(false);
   };
@@ -263,7 +263,7 @@ const Register = () => {
           <div className={classes.formContainer}>
             <form onSubmit={handleSubmit}>
               <div className={classes.ip}>
-                <label htmlFor="name">Name: (For Bid 2 Bid and CodeDuet enter name of all team members)</label>
+                <label htmlFor="name">Name: (For CodeDuet enter name of all team members)</label>
                 <Input
                   properties={{
                     type: "text",
@@ -415,11 +415,12 @@ const Register = () => {
                     />{" "}
                     CloudVerse (₹150)
                   </label>
-                  <label>
+                  <label style={{textDecoration:"line-through",color:"gray"}}>
                     <input
                       type="checkbox"
                       name="Bid 2 Build"
-                      ref={bidToBuildRef}
+                      // ref={bidToBuildRef}
+                      disabled={true} 
                       onChange={(e) => {
                         handleEventChange(e);
                       }}
@@ -527,7 +528,7 @@ const Register = () => {
                     fontSize: "1.123rem",
                   }}
                 >
-                  Note: NetVerse and CloudVerse entries are closed.<h5>* contact respective leads for more info.</h5>
+                  Note: NetVerse, CloudVerse and Bid 2 Build entries are closed.<h5>* contact respective leads for more info.</h5>
                 </h4>
               </div>
             </div>
